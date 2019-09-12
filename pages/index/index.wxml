@@ -1,13 +1,40 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view>
+  <!-- nav开始 -->
+  <view class="nav_wrap">
+    <scroll-view class="nav" scroll-x>
+      <view bindtap="activeNav" data-index="{{index}}" class="nav_item {{index === indexNav ? 'active' : ''}}" wx:for="{{navList}}" wx:key="{{index}}">
+        {{item.text}}
+      </view>
+    </scroll-view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <!-- nav结束 -->
+  <!-- swiper开始 -->
+  <view class="slides">
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+      <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
+        <navigator>
+          <image mode="widthFix" src="{{item.imgSrc}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
   </view>
+  <!-- swiper结束 -->
+  <!-- video开始 -->
+  <view class="video_warp">
+    <navigator url="../detail/detail?id{{item.id}}" class="video_item" wx:for="{{videoList}}" wx:key="{{index}}">
+      <view class="video_img">
+        <image mode="widthFix" src="{{item.imgSrc}}" />
+        <view class="video_info">
+          <view class="play_count">
+            <text>播放:{{item.playCount}}</text>
+          </view>
+          <view class="comment_count">
+            <text>评论:{{item.commentCount}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="video_title">{{item.desc}}</view>
+    </navigator>
+  </view>
+  <!-- video结束 -->
 </view>

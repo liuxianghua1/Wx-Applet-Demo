@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/detail/detail"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChats",
-    "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#84C225",
+    "navigationBarTitleText": "领军者小程序",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json"
 }

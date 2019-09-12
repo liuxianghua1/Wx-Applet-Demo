@@ -1,0 +1,12 @@
+<view>
+    <view>
+        <video src="{{videoInfo.videoSrc}}" controls="{{true}}"></video>
+        <view class="video_title">
+           {{videoInfo.videoTitle}}
+        </view>
+        <!-- <view class="video_detail">
+            {{videoInfo.videoSrc}}
+        </view> -->
+    </view>
+      
+</view>
